@@ -1,0 +1,38 @@
+version: "2"
+services:
+    www:
+        build: .
+        ports: 
+            - "9000:80"
+        volumes:
+            - .:/var/www/html/
+        links:
+            - db
+        networks:
+            - default
+    db:
+        image: mysql
+        ports: 
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: id18582452_scandi_test_app
+            MYSQL_USER: id18582452_alexangel102
+            MYSQL_PASSWORD: Petrik_st536644
+            MYSQL_ROOT_PASSWORD: Petrik_st536644
+        volumes:
+            - ./dump:/docker-entrypoint-initdb.d
+            - persistent:/var/lib/mysql
+        networks:
+            - default
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 9090:80
+        environment:
+            MYSQL_USER: id18582452_alexangel102
+            MYSQL_PASSWORD: Petrik_st536644
+            MYSQL_ROOT_PASSWORD: Petrik_st536644
+volumes:
+    persistent:
