@@ -3,9 +3,9 @@ services:
     www:
         build: .
         ports: 
-            - "9000:80"
+            - "8000:80"
         volumes:
-            - .:/var/www/html/
+            - ./public:/var/www/html/
         links:
             - db
         networks:
@@ -29,7 +29,7 @@ services:
         links: 
             - db:db
         ports:
-            - 9090:80
+            - "9090:80"
         environment:
             MYSQL_USER: id18582452_alexangel102
             MYSQL_PASSWORD: Petrik_st536644
