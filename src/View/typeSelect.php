@@ -9,7 +9,7 @@ $query->setFetchMode(PDO::FETCH_ASSOC);
 ?>
 
 <?php while ($r = $query->fetch()):?>
-	<option value="<?= htmlspecialchars($r["id"]); ?>"><?= htmlspecialchars($r["type"]); ?></option>
+	<option value="<?= htmlspecialchars($r["type"]); ?>"><?= htmlspecialchars($r["type"]); ?></option>
 <?php endwhile;?>
 
 

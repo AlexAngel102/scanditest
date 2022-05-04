@@ -47,16 +47,15 @@
 					<label for="productType">Type:</label>
 				</div>
 				<div class="col-2">
-					<select class="form-control" id="productType" onchange="this">
-						<?php include "typeSwitcher.php";?>
+
+					<select class="form-control" id="productType"  onchange="this">
+						<option value="" selected disabled hidden>Choose here</option>
+						<?php require "typeSelect.php";?>
 					</select>
-					<script src="./js/formSwitcher.js"></script>
-					<div id="content"></div>
 				</div>
 			</div>
 		</div>
+		<div class="m-2" id="content"></div>
 	</form>
 </div>
-
-
 

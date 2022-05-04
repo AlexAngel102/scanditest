@@ -8,7 +8,7 @@
 					<ul class="navbar-nav navbar-nav-scroll">
 						<li class="nav-item">
 							<form action="" method="post">
-								<button type="button" id="" class="btn btn-outline-success mx-1">Add
+								<button type="button" id="" class="btn btn-outline-success mx-1" >Add
 									product
 								</button>
 							</form>
@@ -27,7 +27,7 @@
 	</div>
 	<div class="container">
 		<div class="row justify-content-md-end">
-            <?php include "allProducts.php"; ?>
+            <?php include "showAllProducts.php"; ?>
 		</div>
 	</div>
 </div>

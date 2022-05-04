@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . public/index.php [L]
+    RewriteCond %{REQUEST_FILENAME} !usr/var/www/.*
+    RemoveHandler .html .htm
+    AddType application/x-httpd-php .php .htm .html .phtml
+</IfModule>
+
+<IfModule mod_headers.c>
+
+<FilesMatch "\.(jpg|jpeg|png|ico|gif|css|js|eot|otf|tt[cf]|woff|woff2|svg|mp4|webm|ogv)$">
+    Header set Cache-Control "max-age=60, must-revalidate"
+    Header unset ETag
+    FileETag None
+</FilesMatch>
+</IfModule>
+
+DirectoryIndex public/index.php
+
+#php_value display_errors 'Off'
+
+
+
+
+

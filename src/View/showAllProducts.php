@@ -11,6 +11,7 @@ $query->setFetchMode(PDO::FETCH_ASSOC);
 
 while ($r = $query->fetch()):?>
 	<div class="col-sm rounded border" style="margin: 0.5%">
+		<input type="checkbox" id="" name="" value="">
         <?= htmlspecialchars($r["sku"]); ?><br>
         <?= htmlspecialchars($r["name"]); ?><br>
         <?= htmlspecialchars($r["parameter"]) . htmlspecialchars($r["unit"]); ?><br>
